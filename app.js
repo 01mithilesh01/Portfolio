@@ -44,7 +44,13 @@ app.post("/posting", function(request, response){
     response.redirect('/');
 });
 
-app.listen(8000, function(){
+
+let port = process.env.PORT;
+if(port == null || port == "")
+{
+    port=8000;
+}
+app.listen(port, function(){
     console.log("Server running on port 8000");
 });
 
