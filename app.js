@@ -1,3 +1,4 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -7,8 +8,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public"));
 
 // connectiong mongoose node and mongoDB via mongoose.
-mongoose.connect('mongodb://localhost:27017/portfolioDB', {useNewUrlParser: true, useUnifiedTopology: true });
-
+mongoose.connect('mongodb+srv://mithileshpatil:aXJFhEvcm0JihmA7@cluster0.kodko.mongodb.net/portfolioDB', {useNewUrlParser: true, useUnifiedTopology: true });
 const contactSchema = {
     name : String,
     email : String,
@@ -23,8 +23,10 @@ app.get("/", function(req, res){
     res.sendFile(__dirname+"/index.html");
 });
 
+app.get('/saved',(req,res) => res.send("data saved"));
 
-app.post("/", function(request, response){
+app.post("/posting", function(request, response){
+    console.log("get the data...");
     const nameP = request.body.name;
     const emailP = request.body.email;
     const phonenoP = request.body.phoneno;
@@ -37,11 +39,15 @@ app.post("/", function(request, response){
         message : messageP
     });
     contact.save();
+    console.log("save the data succesfully");
+    
+    response.redirect('/');
 });
-
-
-
 
 app.listen(8000, function(){
     console.log("Server running on port 8000");
 });
+
+
+
+// aXJFhEvcm0JihmA7

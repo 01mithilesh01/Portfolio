@@ -26,7 +26,15 @@ text-transform: uppercase;
 padding-left: 10px;
 }
 
+.social a:focus,
+.social a:active{
+    outline : none;
+}
 
+#projects a:focus,
+#projects a:focus{
+    outline : none;
+}
 .navbar-dark .navbar-nav .nav-item .nav-link:hover{
 color: smokewhite;
 }
@@ -322,7 +330,7 @@ html{
     background-size: cover;
     padding: 40px 0;
     margin-top :-48px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     height: 100%;
 }
 
