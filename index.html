@@ -603,9 +603,12 @@
               name="message"
               required
             ></textarea>
-            <button class="contact-form-btn" name="submit" type="submit" onSubmit="myFunction()">
+            <!-- <button class="contact-form-btn" name="submit" type="submit" onSubmit="myFunction()">
               Send Message
-            </button>
+            </button> -->
+            <input type="submit" class="contact-form-btn" name=""submit
+                                  value="Send Message"
+                                  onclick="sub();redirectto();">
           </form>
 
           <div class="follow">
@@ -656,9 +659,17 @@
     
     <script type="text/javascript">
       
-      function myFunction() {
-        alert("form saved");
-      }
+      // function myFunction() {
+      //   alert("form saved");
+      // }
+      function sub() {
+      alert("Contact submitted sucessfully! Will reach you soon. :)");
+    }
+    function redirectto(){
+      var a = window.location.href;
+      console.log(a)
+      //window.location = a;
+    }
     </script>
   </body>
   
